@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.slider {
+  --slide-width: 10rem;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.slide {
+  --card-opacity: 0.3;
+
+  display: none;
+  width: var(--slide-width);
+  aspect-ratio: 4 / 5;
+  border-radius: 1rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  backdrop-filter: blur(5px);
+  mix-blend-mode: overlay;
+}
+
+.slide[data-type="active"] {
+  display: block;
+}
+
+.slide[data-type="before"] {
+  display: block;
+  position: absolute;
+  scale: 0.8;
+  left: 0;
+  transform: translatex(-7rem);
+
+  z-index: -1;
+}
+
+.slide[data-type="after"] {
+  display: block;
+  position: absolute;
+  scale: 0.8;
+  right: 0;
+  transform: translatex(7rem);
+
+  z-index: -1;
+}
+
+.num1 {
+  background-image: url("./images/8.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+
+.num2 {
+  background-image: url("./images/7.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num3 {
+  background-image: url("./images/6.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num4 {
+  background-image: url("./images/5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num5 {
+  background-image: url("./images/4.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num6 {
+  background-image: url("./images/3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num7 {
+  background-image: url("./images/2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+.num8 {
+  background-image: url("./images/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 450px;
+}
+
+[data-btn] {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: black;
+  border: 1px solid black;
+  background-color: transparent;
+  transition: scale 200ms ease;
+}
+
+[data-btn]:hover {
+  scale: 1.1;
+}
+
+h1,
+h3 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+h3 {
+  color: rgb(25, 169, 169);
+  font-size: 29px;
+  font-weight: bold;
+}
